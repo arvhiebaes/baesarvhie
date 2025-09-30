@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* ===== MONOCHROME CSS ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #111;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 14px 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    nav button.active,
+    nav button:hover {
+      background: #333;
+    }
+
+    section {
+      padding: 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>My Portfolio</header>
+
+  <!-- Navigation Tabs -->
+  <nav>
+    <button class="tab-btn active" data-tab="all">All</button>
+    <button class="tab-btn" data-tab="seatwork">Seatwork</button>
+    <button class="tab-btn" data-tab="quizzes">Quizzes</button>
+    <button class="tab-btn" data-tab="labs">Lab Activities</button>
+    <button class="tab-btn" data-tab="exam">Exam</button>
+  </nav>
+
+  <!-- Content Sections -->
+  <section id="all" class="active">
+    <h2>All Works</h2>
+    <p>All your portfolio works are shown here.</p>
+  </section>
+
+  <section id="seatwork">
+    <h2>Seatwork</h2>
+    <p>No seatworks yet.</p>
+  </section>
+
+  <section id="quizzes">
+    <h2>Quizzes</h2>
+    <p>Quiz #1 – 18/20</p>
+  </section>
+
+  <section id="labs">
+    <h2>Lab Activities</h2>
+    <p>Laboratory works and reports.</p>
+  </section>
+
+  <section id="exam">
+    <h2>Exam</h2>
+    <p>Final exam submissions and scores.</p>
+  </section>
+
+  <footer>
+    © 2025 Arvhie Sabillo Baes — Portfolio for ITEC55
+  </footer
+
+  <!-- ===== JavaScript for Switching Tabs ===== -->
+  <script>
+    const buttons = document.querySelectorAll(".tab-btn");
+    const sections = document.querySelectorAll("section");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        // Remove active class from all buttons
+        buttons.forEach(btn => btn.classList.remove("active"));
+        // Add to clicked button
+        button.classList.add("active");
+
+        // Hide all sections
+        sections.forEach(sec => sec.classList.remove("active"));
+        // Show selected section
+        const tabId = button.getAttribute("data-tab");
+        document.getElementById(tabId).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
