@@ -62,7 +62,6 @@
 <body>
   <header>Arvhie Baes Portfolio</header>
 
-  <!-- Navigation Tabs -->
   <nav>
     <button class="tab-btn active" data-tab="all">All</button>
     <button class="tab-btn" data-tab="seatwork">Seatwork</button>
@@ -70,8 +69,7 @@
     <button class="tab-btn" data-tab="labs">Lab Activities</button>
     <button class="tab-btn" data-tab="exam">Exam</button>
   </nav>
-
-  <!-- Content Sections -->
+  
   <section id="all" class="active">
     <h2>All Works</h2>
     <p>All your portfolio works are shown here.</p>
@@ -97,21 +95,20 @@
     <p>Final exam submissions and scores.</p>
   </section>
 
-  <!-- ===== JavaScript for Switching Tabs ===== -->
   <script>
     const buttons = document.querySelectorAll(".tab-btn");
     const sections = document.querySelectorAll("section");
 
     buttons.forEach(button => {
       button.addEventListener("click", () => {
-        // Remove active class from all buttons
+        
         buttons.forEach(btn => btn.classList.remove("active"));
-        // Add to clicked button
+        
         button.classList.add("active");
 
-        // Hide all sections
+        
         sections.forEach(sec => sec.classList.remove("active"));
-        // Show selected section
+        
         const tabId = button.getAttribute("data-tab");
         document.getElementById(tabId).classList.add("active");
       });
